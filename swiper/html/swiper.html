@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>窈窕淑女君子好逑</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+	<style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #fff;
+		}
+		.nav-bar {
+			position: fixed;
+			bottom: 10px;
+			left: 50%;
+			display: flex;
+			z-index: 1;
+			transform: translateX(-50%);
+		}
+		.nav-bar>div {
+			flex: 1;
+			text-align: center;
+			border-radius: 50%;
+			border: 1px solid green;
+			padding: 5px;
+			margin: 2px;
+			width: 10px;
+			height: 10px;
+			line-height: 10px;
+		}
+		.active {
+			background-color: green;
+			color: #fff;
+		}
+		#audio {
+			width: 60px;
+			height: 60px;
+			position: fixed;
+			top: 3%;
+			right: 3%;
+			z-index: 60;
+		}
+		#audio>span {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			left: 3px;
+			bottom: 3px;
+			background: url("../images/music_off.png");
+			background-size: cover;
+		}
+		.run {
+			background: url("../images/music.gif");
+			background-size: cover;
+		}
+		.rotate {
+			animation: rotating 2s infinite linear;
+		}
+		@keyframes rotating {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="../images/01.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/02.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/03.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/04.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/05.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/06.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/07.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/08.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/09.jpg" alt="" width="100%" height="100%">
+			</div>
+		</div>
+	</div>
+	<div class="nav-bar">
+		<div class="active">1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div>9</div>
+	</div>
+	<div id="audio" class="run">
+		<span class="music_icon rotate"></span>
+		<audio src="../images/confessions-balloon.mp3" loop style="display: none;"></audio>
+	</div>
+    <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../js/swiper.min.js"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper(".swiper-container", {
+			on: {
+				slideChangeTransitionStart: function() {
+					$(".nav-bar").find("div").removeClass("active");
+					$(".nav-bar").find("div").eq(this.activeIndex).addClass("active");
+				},
+			},
+			/*autoplay: {
+				delay: 2000,
+				disableOnInteraction: false,
+			},
+			effect: "coverflow",*/
+		});
+
+		$(".nav-bar").find("div").eq(0).click(function() {
+			swiper.slideTo(0, 1000, false);
+		});
+
+		$(".nav-bar").find("div").eq(1).click(function() {
+			swiper.slideTo(1, 1000, false);
+		});
+
+		$(".nav-bar").find("div").eq(2).click(function() {
+			swiper.slideTo(2, 1000, false);
+		});
+
+		$(".nav-bar").find("div").eq(3).click(function() {
+			swiper.slideTo(3, 1000, false);
+		});
+
+		$(".nav-bar").find("div").eq(4).click(function() {
+			swiper.slideTo(4, 1000, false);
+		});
+
+		$(".nav-bar").find("div").eq(5).click(function() {
+			swiper.slideTo(5, 1000, false);
+		});
+
+		$(".nav-bar").find("div").eq(6).click(function() {
+			swiper.slideTo(6, 1000, false);
+		});
+
+		$(".nav-bar").find("div").eq(7).click(function() {
+			swiper.slideTo(7, 1000, false);
+		});
+
+		$(".nav-bar").find("div").eq(8).click(function() {
+			swiper.slideTo(8, 1000, false);
+		});
+
+		$(document).ready(function() {
+			//$(".swiper-container").height($(window).height());
+			$(".nav-bar").find("div").click(function() {
+				if($(this).hasClass("active"))
+					return;
+				$(".nav-bar").find("div").removeClass("active");
+				$(this).addClass("active");
+				//swiper.autoplay.start();
+			});
+
+			$("#audio span").on('click', function() {
+        		if ($("#audio").hasClass("run")) {
+            		$("#audio").removeClass("run").find("audio")[0].pause();
+            		$("#audio").find("span").removeClass("rotate");
+		        } else {
+		            $("#audio").addClass("run").find("audio")[0].play();
+            		$("#audio").find("span").addClass("rotate");
+		        }
+    		});
+		});
+
+		window.onload = function() {
+			$("#audio").find("audio")[0].play();
+		};
+	</script>
+</body>
+</html>

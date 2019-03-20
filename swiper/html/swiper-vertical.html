@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拥有你就拥有全世界</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+	<style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #efefef;
+		}
+		.nav-bar {
+			position: fixed;
+			left: 50%;
+			bottom: 5px;
+			transform: translateX(-50%);
+			background-image: url("../images/down-arrow.png");
+			background-position: 0 0;
+			width: 32px;
+			height: 32px;
+			z-index: 1;
+			animation: arrow 1.5s infinite ease-in-out;
+		}
+		@keyframes arrow {
+			0% {
+				opacity: 0.1;
+				bottom: 10px;
+			}
+			100% {
+				opacity: 1.0;
+				bottom: 0;
+			}
+		}
+		.swiper-pagination {
+			position: fixed;
+		}
+		#audio {
+			width: 60px;
+			height: 60px;
+			position: fixed;
+			top: 3%;
+			right: 3%;
+			z-index: 60;
+		}
+		#audio>span {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			left: 3px;
+			bottom: 3px;
+			background: url("../images/music_off.png");
+			background-size: cover;
+		}
+		.run {
+			background: url("../images/music.gif");
+			background-size: cover;
+		}
+		.rotate {
+			animation: rotating 2s infinite linear;
+		}
+		@keyframes rotating {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		.hidden-content {
+			position: fixed;
+			top: 40px;
+			left: 0;
+			width: 100%;
+		}
+		.hidden-content>p {
+			margin: 0 auto;
+			color: #333;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="../images/09.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/02.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/03.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/04.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/05.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/06.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/07.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/08.jpg" alt="" width="100%" height="100%">
+			</div>
+			<div class="swiper-slide">
+				<img src="../images/01.jpg" alt="" width="100%" height="100%">
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<div class="hidden-content">
+		<p>你必须不停地奔跑<br/>才能留在原地</p>
+	</div>
+	<div class="nav-bar"></div>
+	<div id="audio" class="run">
+		<span class="music_icon rotate"></span>
+		<audio src="../images/confessions-balloon.mp3" loop style="display: none;"></audio>
+	</div>
+    <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../js/swiper.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			$("#audio").find("audio")[0].play();
+		};
+
+		$(document).ready(function() {
+			$("#audio span").on('click', function() {
+        		if ($("#audio").hasClass("run")) {
+            		$("#audio").removeClass("run").find("audio")[0].pause();
+            		$("#audio").find("span").removeClass("rotate");
+		        } else {
+		            $("#audio").addClass("run").find("audio")[0].play();
+            		$("#audio").find("span").addClass("rotate");
+		        }
+    		})
+		});
+		var swiper = new Swiper(".swiper-container", {
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			direction: "vertical",
+			height: window.innerHeight,
+		});
+
+		//swiper.pagination.bullets.css({"background": "green", "padding": "2px"});
+
+		$(".nav-bar").click(function() {
+			swiper.slideNext();
+		});
+	</script>
+</body>
+</html>
