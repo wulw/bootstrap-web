@@ -9,3 +9,7 @@ swiper
 这是一个关于移动端左右滑动的布局
 [horizontal](https://wulw.github.io/bootstrap-web/swiper/html/swiper.html)
 [vertical](https://wulw.github.io/bootstrap-web/swiper/html/swiper-vertical.html)
+
+oneCartoon
+这是一个关于一卡通公众号的页面布局
+[demo](https://wulw.github.io/bootstrap-web/oneCartoon/index.html)
