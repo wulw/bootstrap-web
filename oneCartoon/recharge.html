@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+	<title>校园卡充值</title>
+	<!-- sui css -->
+	<link rel="stylesheet" href="css/sm.min.css">
+	<link rel="stylesheet" href="css/sm-extend.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<style type="text/css">
+		.page {
+			background: #fff;
+		}
+		.user-info {
+			overflow: hidden;
+			padding: 1rem;
+			border-bottom: .5rem solid #efefef; 
+		}
+		.curr-user {
+			float: left;
+		}
+		.curr-user > img {
+			width: .8rem;
+			height: .8rem;
+			margin-right: .25rem;
+			vertical-align: middle;
+		}
+		.curr-user > span {
+			vertical-align: middle;
+			color: #999;
+		}
+		.user-name {
+			font-size: 1rem;
+			font-weight: bold;
+		}
+		.menu {
+			float: right;
+			background: url('images/record.png') no-repeat;
+			background-size: 100% 100%;
+			width: 1.25rem;
+			height: 1.25rem;
+			border: .1rem solid #ff4956;
+			margin-top: .75rem;
+		}
+		.quick {
+			padding-bottom: 1rem;
+		}
+		.quick-title,
+		.other-title {
+			padding: .5rem 1rem;
+			font-weight: bold;
+		}
+		ul.quick-content {
+			list-style-type: none;
+			margin: 0;
+			padding: 0 .5rem;
+			overflow: hidden;
+		}
+		ul.quick-content > li {
+			border: .05rem solid #ff4956;
+			margin: 0 .5rem;
+			padding: .3rem .5rem;
+			width: calc(100%/3 - 1rem);
+			float: left;
+			text-align: center;
+			border-radius: .25rem;
+		}
+		ul.quick-content > li:nth-child(1),
+		ul.quick-content > li:nth-child(2),
+		ul.quick-content > li:nth-child(3) {
+			margin-bottom: 1rem;
+		}
+		ul.quick-content > li.focus {
+			background: #ff4956;
+		}
+		ul.quick-content > li.focus > a {
+			color: #fff;
+		}
+		ul.quick-content > li > a {
+			font-size: 1rem;
+			color: #ff4956;
+		}
+		.other > input {
+			margin: .5rem 1rem;
+			display: inline-block;
+			padding: .5rem;
+			width: calc(100% - 2rem);
+			border-radius: .25rem;
+			border: .05rem solid #ddd;
+		} 
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="content">
+			<div class="user-info">
+				<div class="curr-user">
+					<img src="images/curr_user.png" alt="当前用户"><span>当前用户</span><br>
+					<div class="user-name"><span>张晓明&nbsp;&nbsp;&nbsp;&nbsp;20180101</span></div>
+				</div>	
+				<div class="menu">
+				</div>
+			</div>
+			<div class="quick">
+				<div class="quick-title">
+					<span>快捷充值</span>
+				</div>
+				<ul class="quick-content">
+					<li class="focus"><a href="javascript:;">200元</a></li>	
+					<li><a href="javascript:;">100元</a></li>	
+					<li><a href="javascript:;">50元</a></li>	
+					<li><a href="javascript:;">20元</a></li>	
+					<li><a href="javascript:;">10元</a></li>	
+					<li><a href="javascript:;">5元</a></li>	
+				</ul>
+			</div>
+			<div class="other">
+				<div class="other-title">
+					<span>其他金额</span>
+				</div>
+				<input type="text" name="" placeholder="请输入金额">
+			</div>	
+			<buttton type="button" class="btn btn-primary">确认支付</buttton>
+		</div>
+	</div>
+	<!-- sui js -->
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/sm.min.js"></script>
+	<script type="text/javascript" src="js/sm-extend.min.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('ul.quick-content > li').click(function() {
+				$(this).addClass('focus').siblings().removeClass('focus');
+			});	
+		});
+	</script>
+</body>
+</html>

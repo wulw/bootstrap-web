@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+	<title>校园卡余额</title>
+	<!-- sui css -->
+	<link rel="stylesheet" href="css/sm.min.css">
+	<link rel="stylesheet" href="css/sm-extend.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<style type="text/css">
+		.page {
+			background: #fff;
+		}
+		.img-container {
+			position: relative;
+			padding: .75rem .5rem 0 .5rem;
+			border-bottom: 1rem solid #efefef;
+		} 
+		.img-container > img {
+			width: 100%;
+		}
+		.cards {
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+			width: calc(100% - 2rem);
+		}
+		.cards > span:nth-child(1) {
+			float: left;
+			margin: .5rem;
+			padding: 0 .1rem;
+			background: #fff;
+			color: #FF6C77;
+			border-radius: .2rem;
+		}
+		.cards > span:nth-child(2) {
+			float: right;
+			padding: .5rem;
+			color: #fff;
+		}
+		.cards > span > img {
+			vertical-align: middle;
+		}
+		.money {
+			position: absolute;
+			top: 3.5rem;
+			left: 1rem;
+			text-align: center;
+			width: calc(100% - 2rem);
+			color: #fff;
+		}
+		.money > span:nth-child(2) {
+			font-size: 2.2rem;
+		}
+		.explain {
+			position: absolute;
+			bottom: 1.5rem;
+			left: 1rem;
+			text-align: center;
+			width: calc(100% - 2rem);
+			color: #fff;
+		}
+		ul.category {
+			padding: 0;
+		}
+		ul.category > li {
+			list-style-type: none;
+			margin: .5rem;
+			padding: .5rem;
+			border-bottom: .05rem solid #ddd;
+		}
+		ul.category > li > a {
+			display: inline-block;
+			width: 100%;
+		}
+		ul.category > li > a > img {
+			width: 1rem;
+			height: 1rem;
+			vertical-align: top;
+			margin: .2rem .5rem 0 0;
+		}
+		ul.category > li > a > span {
+			color: #333;
+			vertical-align: top;
+		}
+		ul.category > li > a > span:last-child {
+			float: right;
+		}
+	</style>
+</head>		
+<body>
+	<div class="page">
+		<div class="content">
+			<div class="img-container">
+				<img src="images/ye_bg.png" alt="校园一卡通">
+				<div class="cards">
+					<span>校园一卡通</span>
+					<span><img src="images/ye_curr_user.png" alt="当前用户"> 张晓明&nbsp;20180101</span>
+				</div>
+				<div class="money">
+					<span>￥</span><span>300.06</span>
+				</div>
+				<div class="explain">
+					<span>使用期限：2018.1.1-2019.1.1</span>
+				</div>
+			</div>
+			<ul class="category">
+				<li>
+					<a href="consumeDetails.html">
+						<img src="images/ye_xiaofeimingxi.png" alt="消费明细">
+						<span>消费明细</span>
+						<span class="icon icon-right"></span>
+					</a>
+				</li>
+				<li>
+					<a href="reportLoss.html">
+						<img src="images/ye_kaguashi.png" alt="卡挂失">
+						<span>卡挂失</span>
+						<span class="icon icon-right"></span>
+					</a>
+				</li>
+				<li>
+					<a href="consumeSetting.html">
+						<img src="images/ye_xiaofeishezhi.png" alt="消费设置">
+						<span>消费设置</span>
+						<span class="icon icon-right"></span>
+					</a>
+				</li>
+				<li>
+					<a href="changePassword.html">
+						<img src="images/ye_xiaofeimima.png" alt="修改密码">
+						<span>修改密码</span>
+						<span class="icon icon-right"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- sui js -->
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/sm.min.js"></script>
+	<script type="text/javascript" src="js/sm-extend.min.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+		});	
+	</script>
+</body>
+</html>

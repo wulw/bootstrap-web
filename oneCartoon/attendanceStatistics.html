@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+	<title>考勤统计</title>
+	<!-- sui css -->
+	<link rel="stylesheet" href="css/sm.min.css">
+	<link rel="stylesheet" href="css/sm-extend.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<style type="text/css">
+		.page {
+			background: #fff;
+		}
+		.buttons-tab {
+			margin: .5rem 3rem;
+		}
+		.buttons-tab .button {
+			border: .05rem solid #ff4956;
+			color: #ff4956;
+			height: 1.5rem;
+			line-height: 1.5rem;
+		}
+		.buttons-tab .button:nth-child(1) {
+			border-top-left-radius: 1rem;
+			border-bottom-left-radius: 1rem;
+		}
+		.buttons-tab .button:nth-child(2) {
+			border-top-right-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+		}
+		.buttons-tab .button.active {
+			color: #fff;
+			background: #ff4956;
+			border: .05rem solid #ff4956;
+		}
+		.content-block {
+			margin: 0;
+			padding: 0;
+		}
+		.student > span:nth-child(2) {
+			color: #666;
+			font-size: .7rem;
+			margin-left: .5rem;
+		}
+		.time > span,
+		.location > span {
+			color: #999;
+			font-size: .7rem;
+		}
+		.time > span:nth-child(2) {
+			float: right;
+			color: #fff;
+			background: orange;
+			padding: 0 .5rem;
+			border-radius: .1rem;
+		}
+		.blue {
+			background: #36B0D5 !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="content">
+			<div class="time-select">
+				<input type="text" value="2018年12月" data-toggle="date">
+			</div>
+			<div class="buttons-tab">
+			    <a href="#statistical" class="tab-link active button">统计信息</a>
+			    <a href="#details" class="tab-link button">详细记录</a>
+			</div>
+			<div class="content-block">
+			    <div class="tabs">
+					<div id="statistical" class="tab active">
+						<div class="content-block">
+							<ul class="lists">
+								<li>
+									<a href="javascript:;">
+										<span>姓名</span>
+										<span>张晓明</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>学工号</span>
+										<span>20180101</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>考勤次数</span>
+										<span>30</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>实际出勤</span>
+										<span>30</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>进校正确打卡</span>
+										<span>30</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>迟到次数</span>
+										<span>2</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>离校正确打卡</span>
+										<span>30</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>早退次数</span>
+										<span>30</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>旷工次数</span>
+										<span>2</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>离校正确打卡</span>
+										<span>30</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>请假（考勤周期）</span>
+										<span>1</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<span>休假（考勤周期）</span>
+										<span>2</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="details" class="tab">
+						<div class="content-block">
+							<ul class="list">
+								<li>
+									<a href="javascript:;">
+										<div class="student"><span>张晓明</span><span> 20180101</span></div>
+										<div class="time"><span>打卡时间：2019-04-05 22:06:35</span><span>进校</span></div>	
+										<div class="location"><span>打卡位置：逸夫楼教学楼东侧301教室</span></div>	
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<div class="student"><span>张晓明</span><span> 20180101</span></div>
+										<div class="time"><span>打卡时间：2019-04-05 22:06:35</span><span class="blue">进校</span></div>	
+										<div class="location"><span>打卡位置：逸夫楼教学楼东侧301教室</span></div>	
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<div class="student"><span>张晓明</span><span> 20180101</span></div>
+										<div class="time"><span>打卡时间：2019-04-05 22:06:35</span><span class="blue">进校</span></div>	
+										<div class="location"><span>打卡位置：逸夫楼教学楼东侧301教室</span></div>	
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<div class="student"><span>张晓明</span><span> 20180101</span></div>
+										<div class="time"><span>打卡时间：2019-04-05 22:06:35</span><span>进校</span></div>	
+										<div class="location"><span>打卡位置：逸夫楼教学楼东侧301教室</span></div>	
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<!-- sui js -->
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/sm.min.js"></script>
+	<script type="text/javascript" src="js/sm-extend.min.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.time-select > input').calendar({
+			    value: ['2018-12-25']
+			});
+		});
+	</script>
+</body>		
+</html>

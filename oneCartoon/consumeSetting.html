@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+	<title>消费设置</title>
+	<!-- sui css -->
+	<link rel="stylesheet" href="css/sm.min.css">
+	<link rel="stylesheet" href="css/sm-extend.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<style type="text/css">
+		.page {
+			background: #fff;
+		}
+		.content-title {
+			font-weight: bold;
+			padding: 1rem 1rem .5rem 1rem;
+		}
+		ul.remind {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			border-bottom: .5rem solid #efefef;
+		}
+		ul.remind > li {
+			margin: 0 1rem;
+			padding: .5rem 0;  
+			overflow: hidden;
+			border-bottom: .05rem solid #ddd;
+		}
+		ul.remind > li:nth-child(3) {
+			border-bottom-color: transparent;
+		}
+		.remind-left {
+			float: left;
+		}
+		.remind-right {
+			float: right;
+		}
+		input.remind-right {
+			width: 30%;
+			margin-right: .5rem;
+			background: #efefef;
+			height: 1.5rem;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="content">
+			<div class="content-title">
+				<span>消费阈值提醒</span>
+			</div>
+			<ul class="remind">
+				<li>
+					<span class="remind-left">每日消费阈值提醒</span>
+					<span class="remind-right">元</span>
+					<input class="remind-right" type="text">
+				</li>
+				<li>
+					<span class="remind-left">每周消费阈值提醒</span>
+					<span class="remind-right">元</span>
+					<input class="remind-right" type="text">
+				</li>
+				<li>
+					<span class="remind-left">每月消费阈值提醒</span>
+					<span class="remind-right">元</span>
+					<input class="remind-right" type="text">
+				</li>
+			</ul>
+			<div class="content-title">
+				<span>余额提醒</span>
+			</div>
+			<ul class="remind" style="border-bottom-color: transparent;">
+				<li>
+					<span class="remind-left">设置提醒额度</span>
+					<span class="remind-right">元</span>
+					<input class="remind-right" type="text">
+				</li>
+			</ul>
+			<buttton type="button" class="btn btn-primary">确定修改</buttton>
+		</div>
+	</div>
+	<!-- sui js -->
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/sm.min.js"></script>
+	<script type="text/javascript" src="js/sm-extend.min.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+		});
+	</script>
+</body>
+</html>

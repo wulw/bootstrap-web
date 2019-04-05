@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+	<title>充值详情</title>
+	<!-- sui css -->
+	<link rel="stylesheet" href="css/sm.min.css">
+	<link rel="stylesheet" href="css/sm-extend.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<style type="text/css">
+		.page {
+			background: #fff;
+		}
+		.recharge-info {
+			padding: 1rem;
+			text-align: center;
+			border-bottom: .5rem solid #efefef;
+		}
+		.recharge-info > div:nth-child(1) {
+			color: #999;
+		}
+		.recharge-info > div:nth-child(2) {
+			font-size: 2rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="content">
+			<div class="recharge-info">
+				<div><span>充值成功</span></div>
+				<div><span>-30.00</span></div>
+			</div>
+			<ul class="lists">
+				<li>
+					<a href="javascript:;">
+						<span>姓名</span>
+						<span>张晓明</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<span>学工号</span>
+						<span>20180101</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<span>变动前金额</span>
+						<span>0.01</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<span>变动后金额</span>
+						<span>100.01</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<span>充值时间</span>
+						<span>2019-04-04 00:53:48</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<span>操作人员</span>
+						<span>何飞鸿</span>
+					</a>
+				</li>
+			</ul>
+			<buttton type="button" class="btn btn-primary">返回</buttton>
+		</div>
+	</div>
+	<!-- sui js -->
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/sm.min.js"></script>
+	<script type="text/javascript" src="js/sm-extend.min.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('ul.quick-content > li').click(function() {
+				$(this).addClass('focus').siblings().removeClass('focus');
+			});	
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+	<title>校园卡挂失</title>
+	<!-- sui css -->
+	<link rel="stylesheet" href="css/sm.min.css">
+	<link rel="stylesheet" href="css/sm-extend.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<style type="text/css">
+		.page {
+			background: #fff;
+		}
+		.user-info {
+			overflow: hidden;
+			padding: 1rem;
+			border-bottom: .5rem solid #efefef; 
+		}
+		.curr-user {
+			float: left;
+		}
+		.curr-user > img {
+			width: .8rem;
+			height: .8rem;
+			margin-right: .25rem;
+			vertical-align: middle;
+		}
+		.curr-user > span {
+			vertical-align: middle;
+			color: #999;
+		}
+		.user-name {
+			font-size: 1rem;
+			font-weight: bold;
+		}
+		.menu {
+			float: right;
+			margin-top: .75rem;
+			background: orange;
+			padding: 0 .25rem;
+			border-radius: .1rem;
+			color: #fff;
+		}
+		.loss {
+			padding-bottom: 1rem;
+		}
+		.loss-title {
+			padding: .5rem 1rem;
+			font-weight: bold;
+		}
+		.loss-content > input {
+			margin: .5rem 1rem;
+			display: inline-block;
+			padding: .5rem;
+			width: calc(100% - 2rem);
+			border-radius: .25rem;
+			border: .05rem solid #ddd;
+		} 
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="content">
+			<div class="user-info">
+				<div class="curr-user">
+					<img src="images/curr_user.png" alt="当前用户"><span>当前用户</span><br>
+					<div class="user-name"><span>张晓明&nbsp;&nbsp;&nbsp;&nbsp;20180101</span></div>
+				</div>	
+				<div class="menu">
+					<span>使用中</span>
+				</div>
+			</div>
+			<div class="loss">
+				<div class="loss-title">
+					<span>密码</span>
+				</div>
+				<div class="loss-content">
+					<input type="text" placeholder="请输入校园卡密码" value=""> 
+				</div> 
+			</div>
+			<buttton type="button" class="btn btn-primary">挂失</buttton>
+		</div>
+	</div>
+	<!-- sui js -->
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/sm.min.js"></script>
+	<script type="text/javascript" src="js/sm-extend.min.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('ul.quick-content > li').click(function() {
+				$(this).addClass('focus').siblings().removeClass('focus');
+			});	
+		});
+	</script>
+</body>
+</html>

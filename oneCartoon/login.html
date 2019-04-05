@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+	<title>一卡通助手</title>
+	<!-- sui css -->
+	<link rel="stylesheet" href="css/sm.min.css">
+	<link rel="stylesheet" href="css/sm-extend.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<style type="text/css">
+		.page {
+			background: #fff;
+		}
+		.img-container {
+			height: 50%;
+			width: 100%;
+			text-align: center;
+		}
+		.img-container > img {
+			width: 100%;
+			max-width: 508px;
+			max-height: 496px;
+			padding: 2rem;
+		}
+		.content {
+			height: 100%;
+			width: 100%;
+		}
+		.list-block > .item-input {
+			margin: .5rem 4rem;
+			border-bottom: .05rem solid #ddd;
+			width: calc(100% - 8rem);
+		}
+		.list-block > .item-input > input {
+			text-align: center;
+		}
+		.btn {
+			width: calc(100% - 8rem);
+			margin: 2rem 4rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="content">
+			<div class="img-container">
+				<img class="logo" src="images/dl_bg.png" alt="登录">
+			</div>
+			<form class="list-block" action="index.html" method="post">
+				<div class="account item-input">
+					<input type="text" placeholder="请输入账号">
+				</div>
+				<div class="password item-input">
+					<input type="password" placeholder="请输入密码" onkeyup="checkIn(this);">
+				</div>
+				<buttton type="submit" class="btn btn-default" id="submit">立即绑定</buttton>
+			</form>
+		</div>
+	</div>	
+	<!-- sui js -->
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/sm.min.js"></script>
+	<script type="text/javascript" src="js/sm-extend.min.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.password > input').change(function() {
+				if($(this).val().length > 0) {
+					$('#submit').removeClass('btn-default').addClass('btn-primary');
+				}
+			});
+
+			$('#submit').click(function() {
+
+			});
+		});
+
+		// 判断密码输入框是否有值输入	
+		function checkIn(obj) {
+			if($(obj).val().length > 0) {
+				$('#submit').removeClass('btn-default').addClass('btn-primary');
+			} else {
+				$('#submit').removeClass('btn-primary').addClass('btn-default');
+			}
+		}
+	</script>
+</body>
+</html>
