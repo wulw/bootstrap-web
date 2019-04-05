@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+	<title>消费明细</title>
+	<!-- sui css -->
+	<link rel="stylesheet" href="css/sm.min.css">
+	<link rel="stylesheet" href="css/sm-extend.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<style type="text/css">
+		.page {
+			background: #fff;
+		}
+		.record-title {
+			padding: .5rem;
+			overflow: hidden;
+		}
+		.record-title > select {
+			border: none;
+			float: left;
+			font-weight: bold;
+			font-size: 1rem;
+		}
+		.record-title > span {
+			float: right;
+			color: #999;
+		}
+		.detail-list {
+			font-weight: bold;
+			padding: .5rem .75rem;
+		}
+		.location > span:nth-child(1) {
+			font-size: .7rem;
+			color: #999;
+		}
+		.location > span:nth-child(2) {
+			float: right;
+		}
+		.time {
+			color: #999;
+			font-size: .7rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="content">
+			<div class="time-select">
+				<input type="text" value="2018年12月" data-toggle="date">
+			</div>
+			<div class="buttons-tab">
+			    <a href="#bar" class="tab-link active button">饼图</a>
+			    <a href="#line" class="tab-link button">折线图</a>
+			</div>
+			<div class="record-title">
+				<select>
+					<option>按商铺</option>
+				</select>
+				<span>充值：500元</span>
+			</div>
+			<div class="content-block">
+			    <div class="tabs">
+					<div id="bar" class="tab active">
+						<div class="content-block">
+							<div id="barId" style="width: 100%; height: 200px;"></div>
+						</div>
+					</div>
+					<div id="line" class="tab">
+						<div class="content-block">
+							<div id="lineId" style="width: 100%; height: 200px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<div class="detail-list"><span>明细列表</span></div>
+			<ul class="list">
+				<li>
+					<a href="javascript:;">
+						<div class="type"><span>干脆面</span></div>
+						<div class="location"><span>永辉超市（黄山店）</span><span>-30.00</span></div>	
+						<div class="time"><span>2019-04-05 23:45:30</span></div>	
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<div class="type"><span>手机充值</span></div>
+						<div class="location"><span>中国移动潜山路移动大厅</span><span>-500.00</span></div>	
+						<div class="time"><span>2019-04-05 23:45:30</span></div>	
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<div class="type"><span>干脆面</span></div>
+						<div class="location"><span>永辉超市（黄山店）</span><span>-30.00</span></div>	
+						<div class="time"><span>2019-04-05 23:45:30</span></div>	
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<div class="type"><span>干脆面</span></div>
+						<div class="location"><span>永辉超市（黄山店）</span><span>-30.00</span></div>	
+						<div class="time"><span>2019-04-05 23:45:30</span></div>	
+					</a>
+				</li>
+			</ul>	
+		</div>
+	</div>
+	<!-- sui js -->
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/sm.min.js"></script>
+	<script type="text/javascript" src="js/sm-extend.min.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript" src="assets/echarts.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+		});
+	</script>
+</body>
+</html>

@@ -98,3 +98,30 @@ ul.lists > li > a > span:nth-child(1) {
 	border-right: .25rem solid #999;
 	display: inline-block;
 }
+
+.buttons-tab {
+	margin: .5rem 3rem;
+}
+.buttons-tab .button {
+	border: .05rem solid #ff4956;
+	color: #ff4956;
+	height: 1.5rem;
+	line-height: 1.5rem;
+}
+.buttons-tab .button:nth-child(1) {
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
+}
+.buttons-tab .button:nth-child(2) {
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+.buttons-tab .button.active {
+	color: #fff;
+	background: #ff4956;
+	border: .05rem solid #ff4956;
+}
+.content-block {
+	margin: 0;
+	padding: 0;
+}
