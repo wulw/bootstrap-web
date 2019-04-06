@@ -12,18 +12,19 @@
 	<style type="text/css">
 		.page {
 			background: #fff;
+			display: block;
 		}
-		.record-title {
+		.filter {
 			padding: .5rem;
 			overflow: hidden;
 		}
-		.record-title > select {
+		.filter > select {
 			border: none;
 			float: left;
 			font-weight: bold;
 			font-size: 1rem;
 		}
-		.record-title > span {
+		.filter > span {
 			float: right;
 			color: #999;
 		}
@@ -42,19 +43,35 @@
 			color: #999;
 			font-size: .7rem;
 		}
+		.filter-time {
+			padding: .5rem;
+			border-bottom: .5rem solid #efefef;
+		}
+		.filter-time > input {
+			border: none;
+			width: 31%;
+		}
+		.filter-time > img {
+			float: right;
+			margin: 0 .25rem;
+			height: 1.2rem;
+		}
 	</style>
 </head>
 <body>
 	<div class="page">
 		<div class="content">
-			<div class="time-select">
-				<input type="text" value="2018年12月" data-toggle="date">
+			<div class="filter-time">
+				<span>起止时间：</span>
+				<input type="date" value="2018/1/1">-
+				<input type="date" placeholder="2018/1/1">
+				<img src="images/xuanzeshijian.png" alt="时间选择">
 			</div>
 			<div class="buttons-tab">
-			    <a href="#bar" class="tab-link active button">饼图</a>
-			    <a href="#line" class="tab-link button">折线图</a>
+			    <a href="#eCharts" class="tab-link active button">饼图</a>
+			    <a href="#eCharts" class="tab-link button">折线图</a>
 			</div>
-			<div class="record-title">
+			<div class="filter">
 				<select>
 					<option>按商铺</option>
 				</select>
@@ -62,14 +79,9 @@
 			</div>
 			<div class="content-block">
 			    <div class="tabs">
-					<div id="bar" class="tab active">
+					<div id="eCharts" class="tab active">
 						<div class="content-block">
-							<div id="barId" style="width: 100%; height: 200px;"></div>
-						</div>
-					</div>
-					<div id="line" class="tab">
-						<div class="content-block">
-							<div id="lineId" style="width: 100%; height: 200px;"></div>
+							<div id="eChartsID" style="width: 100%; height: 222px;"></div>
 						</div>
 					</div>
 				</div>
@@ -77,28 +89,28 @@
 			<div class="detail-list"><span>明细列表</span></div>
 			<ul class="list">
 				<li>
-					<a href="javascript:;">
+					<a href="consumeDetails.html">
 						<div class="type"><span>干脆面</span></div>
 						<div class="location"><span>永辉超市（黄山店）</span><span>-30.00</span></div>	
 						<div class="time"><span>2019-04-05 23:45:30</span></div>	
 					</a>
 				</li>
 				<li>
-					<a href="javascript:;">
+					<a href="consumeDetails.html">
 						<div class="type"><span>手机充值</span></div>
 						<div class="location"><span>中国移动潜山路移动大厅</span><span>-500.00</span></div>	
 						<div class="time"><span>2019-04-05 23:45:30</span></div>	
 					</a>
 				</li>
 				<li>
-					<a href="javascript:;">
+					<a href="consumeDetails.html">
 						<div class="type"><span>干脆面</span></div>
 						<div class="location"><span>永辉超市（黄山店）</span><span>-30.00</span></div>	
 						<div class="time"><span>2019-04-05 23:45:30</span></div>	
 					</a>
 				</li>
 				<li>
-					<a href="javascript:;">
+					<a href="consumeDetails.html">
 						<div class="type"><span>干脆面</span></div>
 						<div class="location"><span>永辉超市（黄山店）</span><span>-30.00</span></div>	
 						<div class="time"><span>2019-04-05 23:45:30</span></div>	
@@ -112,11 +124,135 @@
 	<script type="text/javascript" src="js/sm.min.js"></script>
 	<script type="text/javascript" src="js/sm-extend.min.js"></script>
 	<script type="text/javascript" src="js/modal.js"></script>
-	<script type="text/javascript" src="assets/echarts.min.js"></script>
+	<script type="text/javascript" src="assets/echarts/echarts.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			createPieChart();
 
+			$('.buttons-tab > a').click(function() {
+				$(this).addClass('active').siblings().removeClass('active');
+				if($(this).index() == 1) {	
+					createLineChart();
+				} else {
+					createPieChart();
+				}
+			});
 		});
+
+		var pieChart = echarts.init(document.getElementById('eChartsID'));	
+		function createPieChart() {
+			var option = {
+			    tooltip: {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b}: {c} ({d}%)"
+			    },
+			    legend: {
+			    	show: false,
+			        orient: 'vertical',
+			        x: 'left',
+			        data:['商铺一','商铺二','商铺三','商铺四','商铺五','商铺六']
+			    },
+				grid : {
+					left : 0,
+					right : 0,
+					top : '5%',
+					bottom : '5%',
+					containLabel : true,
+				},
+			    color: ['#118EEA','#42BBD1','#4AB35E','#F1B34E','#F5EA6A','#BDD259'],
+			    series: [
+			        {
+			            name:'按商铺',
+			            type:'pie',
+			            radius: ['50%', '80%'],
+			            avoidLabelOverlap: true,
+			            labelLine: {
+							normal : {
+								/*lineStyle: {
+									color: '#fff'
+								},*/
+								show : true,
+								length : 10,
+							    length2: 20,
+							}
+			            },
+			            itemStyle : {
+							normal : {
+								label : {
+									show : true,
+									formatter : '￥{c}\n{b}', //'{d}%\n{b}'
+								}
+							}
+						},
+			            data:[
+			                {value:30.00, name:'商铺一'},
+			                {value:237.07, name:'商铺二'},
+			                {value:425.00, name:'商铺三'},
+			                {value:135.00, name:'商铺四'},
+			                {value:16.88, name:'商铺五'},
+			                {value:2719.91, name:'商铺六'}
+			            ]
+			        }
+			    ]
+			};
+
+			pieChart.setOption(option, true);
+		}
+
+		var lineChart = echarts.init(document.getElementById('eChartsID'));
+		function createLineChart() {
+			var option = {
+				grid : {
+					left : 0,
+					right : 20,
+					top : 10,
+					bottom : 10,
+					containLabel : true,
+				},
+			    xAxis: {
+			        type: 'category',
+			        data: ['11-1', '11-2', '11-3', '11-4', '11-5'],
+			        axisTick: {
+			        	show: false,
+			        },
+			    },
+			    yAxis: {
+			    	show: true,
+			        type: 'value',
+			        axisLine: {
+			        	show: false,
+			        },
+			        axisTick: {
+			        	show: false,
+			        },
+			        axisLabel: {
+			        	show: false,
+			        },
+			    },
+			    series: [{
+			        data: [100.00, 406.20, 206.20, 626.07, 341.00],
+			        type: 'line',
+			        symbol: 'circle',
+			        symbolSize: 8,
+			        itemStyle: {
+			        	normal: {
+			        		label: {
+			        			show: true,
+			        			formatter : '￥{c}', //'{d}%\n{b}'
+			        			color: '#333',
+			        		}
+			        	}
+			        }
+			    }]
+			};
+
+			lineChart.setOption(option, true);
+		}	
+
+		window.onresize = function() {
+			lineChart.resize();
+			pieChart.resize();
+		};
 	</script>
 </body>
 </html>
