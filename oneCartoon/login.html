@@ -28,6 +28,11 @@
 			height: 100%;
 			width: 100%;
 		}
+		.list-block {
+			position: fixed;
+			top: 50%;
+			left: 0;
+		}
 		.list-block > .item-input {
 			margin: .5rem 4rem;
 			border-bottom: .05rem solid #ddd;
@@ -73,7 +78,11 @@
 			});
 
 			$('#submit').click(function() {
-
+				if($('#submit').hasClass('btn-primary')) {
+					window.open('index.html', '_self');	// 登录成功后跳转至首页
+				} else {
+					$.alert('请输入正确的账号密码');
+				}		
 			});
 		});
 
