@@ -12,4 +12,4 @@ swiper
 
 oneCartoon
 这是一个关于一卡通公众号的页面布局
-[一卡通助手](https://wulw.github.io/bootstrap-web/oneCartoon/index.html)
+[一卡通助手](https://wulw.github.io/bootstrap-web/oneCartoon/login.html)
